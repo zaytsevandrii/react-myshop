@@ -35,8 +35,8 @@ function Navbar() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <IconButton sx={{ color: "black" }}>
-            <MenuOutlined />
+        <IconButton /* sx={{ color: "black" }} */ style={{margin:'0px'}}>
+            <MenuOutlined sx={{ stroke: "#ffffff", strokeWidth: 0.8 }} style={{width:'25px', height:'25px'}}/>
           </IconButton>
         <Box
           onClick={() => navigate("/")}
@@ -50,12 +50,13 @@ function Navbar() {
           justifyContent="space-between"
           columnGap="20px"
           zIndex="2"
+          marginLeft='-10px'
         >
          {/*  <IconButton sx={{ color: "black" }}>
             <SearchOutlined />
           </IconButton> */}
-          <IconButton sx={{ color: "black" }}>
-            <PersonOutline />
+          <IconButton /* sx={{ color: "black" }} */>
+            <PersonOutline sx={{ stroke: "#ffffff", strokeWidth: 1 }} style={{width:'33px', height:'33px',fontWeight:900, margin:'-20px'}}/>
           </IconButton>
           <Badge
             badgeContent={cart.length}
@@ -73,9 +74,9 @@ function Navbar() {
           >
             <IconButton
               onClick={() => dispatch(setIsCartOpen({}))}
-              sx={{ color: "black" }}
+              
             >
-              <ShoppingBagOutlined />
+              <ShoppingBagOutlined sx={{ stroke: "#ffffff", strokeWidth: 0.8 }} style={{width:'30px', height:'30px',margin:'-10px'}}/>
             </IconButton>
           </Badge>
           

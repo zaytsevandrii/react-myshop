@@ -21,7 +21,7 @@ export const heroTextureImports2 = importAll(
 
 const MainCarousel = () => {
     const data=true
-  const isNonMobile = useMediaQuery("(min-width:600px)");
+  const isNonMobile = useMediaQuery("(min-width:840px)");
   const heroTexture=isNonMobile?heroTextureImports:heroTextureImports2
   return (
     <Carousel
@@ -39,14 +39,14 @@ const MainCarousel = () => {
             left: "0",
             color: "white",
             padding: "5px",
-            zIndex: "10",
+            zIndex: "1",
           }}
         >
-          <NavigateBeforeIcon sx={{ fontSize: 40 }} />
+          {isNonMobile&&<NavigateBeforeIcon sx={{ fontSize: 40 }} />}
         </IconButton>
       )}
       renderArrowNext={(onClickHandler, hasNext, label) => (
-        <IconButton
+        <IconButton 
           onClick={onClickHandler}
           sx={{
             position: "absolute",
@@ -54,10 +54,10 @@ const MainCarousel = () => {
             right: "0",
             color: "white",
             padding: "5px",
-            zIndex: "10",
+            zIndex: "1",
           }}
         >
-          <NavigateNextIcon sx={{ fontSize: 40 }} />
+          {isNonMobile&&<NavigateNextIcon sx={{ fontSize: 40 }} />}
         </IconButton>
       )}
     >
